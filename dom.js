@@ -59,13 +59,17 @@ function demSoDuong() {
   for (var i = 0; i < listNumber.length; i++)
     if (listNumber[i] > 0) {
       dem++;
-    }
-  //in ra
-
-  var result = "đểm các số dương : " + dem;
+      var result = "đểm các số dương : " + dem;
 
   // document.getElementById("demSoDuong").innerHTML = result;
   return inNoiDung('demSoDuong', result);
+    }else {
+      return -1;
+    }
+
+  //in ra
+
+  
 }
 
 
@@ -124,14 +128,18 @@ function soChanCuoi() {
   let lastPositive = null;
   //Tập hợp các số được thêm vào danh sách
   for (var i = listNumber.length - 1; i >= 0; i--)
-    if (listNumber[i] > 0) {
+    if (listNumber[i]  % 2 == 0) {
       lastPositive = listNumber[i];
-      break;
-    }
-
+      
   var result = "số chẵn cuối cùng : " + lastPositive;
   // document.getElementById("soChanCuoi").innerHTML = result;
   return inNoiDung('soChanCuoi', result);
+      
+    }else{
+
+      return -1;
+    }
+
 
   //tạo một biến `lastPositive` để lưu trữ giá trị của số dương cuối cùng. 
   // duyệt qua từng phần tử của mảng `arr` từ cuối lên đầu và kiểm tra nếu phần tử đó lớn hơn 0, thì chúng ta lưu trữ giá trị đó vào biến `lastPositive` và thoát khỏi vòng lặp.
